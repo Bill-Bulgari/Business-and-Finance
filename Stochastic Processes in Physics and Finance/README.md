@@ -19,7 +19,7 @@ The notebook includes:
 ```text
 Stochastic Processes in Physics and Finance
 ├── README.md
-└── main.ipynb
+└── Stochastic Processes in Physics and Finance.ipynb
 ```
 
 ## Requirements
