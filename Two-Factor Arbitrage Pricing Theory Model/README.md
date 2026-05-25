@@ -32,21 +32,10 @@ $$
 G_t = r_{\mathrm{GLD},t} - r_{f,t}.
 $$
 
-Here, $M_t$ represents the market excess return and $G_t$ represents the excess return on the GLD ETF, used as a factor-mimicking portfolio for gold-price exposure.
-
-For each stock, the empirical regression model is
+Here, $M_t$ represents the market excess return and $G_t$ represents the excess return on the GLD ETF, used as a factor-mimicking portfolio for gold-price exposure. For each stock, the empirical regression model is
 
 $$
-R_{i,t}
-=
-\alpha_i
-+
-\beta_{i,\mathrm{MKT}} M_t
-+
-\beta_{i,\mathrm{GLD}} G_t
-+
-\epsilon_{i,t}.
-$$
+R_{i,t} = \alpha_i + \beta_{i,\mathrm{MKT}} M_t + \beta_{i,\mathrm{GLD}} G_t + \epsilon_{i,t}.$$
 
 The estimated coefficients have the following interpretation:
 
@@ -67,24 +56,11 @@ The project follows these steps:
 
 For a sector $s$, the sector-average factor loadings are
 
-$$
-\bar{\beta}_{s,k}
-=
-\frac{1}{n_s}
-\sum_{i \in s} \hat{\beta}_{i,k},
-$$
+$$\bar{\beta}_{s,k} = \frac{1}{n_s} \sum_{i \in s} \hat{\beta}_{i,k},$$
 
-where $n_s$ is the number of stocks in sector $s$.
+where $n_s$ is the number of stocks in sector $s$. The expected excess return forecast is then computed using
 
-The expected excess return forecast is then computed using
-
-$$
-E[R_s]
-=
-\lambda_{\mathrm{MKT}} \bar{\beta}_{s,\mathrm{MKT}}
-+
-\lambda_{\mathrm{GLD}} \bar{\beta}_{s,\mathrm{GLD}}.
-$$
+$$E[R_s] = \lambda_{\mathrm{MKT}} \bar{\beta}_{s,\mathrm{MKT}} + \lambda_{\mathrm{GLD}} \bar{\beta}_{s,\mathrm{GLD}}.$$
 
 The factor risk premia used in the workbook are
 
@@ -107,9 +83,7 @@ The results show a clear difference between the two sectors. Gold mining stocks 
 
 The gold mining sector is mainly driven by gold-price-related systematic risk. Its large positive GLD beta means that its expected excess return is strongly affected by the expected premium on the gold factor.
 
-The technology sector is mainly driven by broad market risk. Its market beta is close to one, so the market factor contributes most of its expected excess return. Its slightly negative GLD beta reduces its forecasted expected excess return by a small amount because the GLD factor premium is positive.
-
-The forecast decomposition is:
+The technology sector is mainly driven by broad market risk. Its market beta is close to one, so the market factor contributes most of its expected excess return. Its slightly negative GLD beta reduces its forecasted expected excess return by a small amount because the GLD factor premium is positive. The forecast decomposition is:
 
 | Sector | Market Contribution | GLD Contribution | Total |
 |---|---:|---:|---:|
